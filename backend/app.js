@@ -2,11 +2,13 @@
 const express = require('express')
 const todoroute = require("./Route/todoroute")
 const dbconnect = require("./core/db")
+const cors = require('cors');
 //express setup
 const app = express()
-const port = 5000
+const port = 5001
 //middlewares 
 app.use(express.json()) // to parse json 
+app.use(cors())
 // data base connection
 try{
    dbconnect()
